@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <div id="detail"></div>
+    <script>
+        class student {
+            constructor ( name,dob,email,address){
+                this.stname=name;
+                this.stdob=dob;
+                this.stemail=email;
+                this.staddress=address;
+            }
+            info(){
+            let details="<h3>Student Information</h3>"
+            details+="Name :"+ this.stname +"<br>"; 
+            details+="Dob :"+ this.stdob +"<br>"; 
+            details+="Email :"+ this.stemail +"<br>";
+            details+="Address :"+ this.staddress +"<br>";
+            return details
+            }
+        }
+        const stdetails=new student("noman","1996","nomandiu2019@gmail.com","Dhaka" )
+        document.getElementById("result").innerHTML=stdetails.info()
+
+          class trainee{
+            constructor(id,address,Batch){
+                this.iden=id;
+                this.ad=address;
+                this.bat=Batch;
+            }
+            traineeinfo(){
+              let  result="<hr><h3>trainee data</h3> "
+                result+= "ID :"+ this.iden+"</br>"
+                result+= "Address :"+ this.ad+"</br>"
+                result+= "Batch :"+ this.bat+"</br>"
+                return result;
+            }
+            
+          }
+          const details=new trainee("1282203","dHAKA","60")
+            document.getElementById("detail").innerHTML=details.traineeinfo()
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+    <form action="" name="mform">
+    Name: <input type="text" name="name" id="" placeholder="Enter name"> <br>
+    Contact: <input type="text" name="Contact" id="" placeholder="contact number"> <br>
+    Remarks : <textarea name="remark" id=""></textarea> <br>
+    Sex : <input type="radio" name="gender" id="" value="male">Male <input type="radio" name="gender" id="" value="female">Female <br>
+    Courses:<input type="checkbox" name="NT" id="" value="NT" class="course1">NT
+     <input type="checkbox" name="IAD" id="" value="IAD" class="course1">IAD 
+     <input type="checkbox" name="DDD" id="" class="course1" value="DDD" >DDD 
+     <input type="checkbox" name="ESAD" id="" value="ESAD" class="course1">ESAD <br>
+    Location: <select name="location" id="">
+        <option value="Choose one">Choose one</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+    </select> <br>
+    <button onclick="tra()" value="submit">Submit</button>
+</fieldset>
+</form>
+    <script>
+        function tra(){
+            let nam =document.mform.name.value;
+            let con =document.mform.Contact.value;
+            let re =document.mform.remark.value;
+            let gen =document.mform.gender.value;
+            let course =document.getElementsByClassName("course1");
+            let cours ="";
+            for(i=0;i<course.length;i++){
+                if(course[i].checked){
+                    cours+=course[i].value +", "
+                }
+            }
+            let drop = document.mform.location.value;
+            myw = window.open("","trainee data","width=800,height =600")
+            
+            let output;
+            output= "<h1> Trainee Data</h1>"
+            output+= "Name :" + nam +"<br>"
+            output+= "Contact :" + con +"<br>"
+            output+= "Remark :" + re +"<br>"
+            output+= "Gender :" + gen +"<br>"
+            output+= "Course :" + cours +"<br>"
+            output+= "Locations :" + drop +"<br>"
+            myw.document.write(output);
+            // alert(nam);
+            
+
+        }
+    </script>
+</body>
+</html>

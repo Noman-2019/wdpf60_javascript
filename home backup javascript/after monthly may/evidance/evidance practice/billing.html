@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form" >
+        <fieldset>
+        First Name:<input type="text" name="fname" placeholder="Enter first name"><br>
+        Last Name:<input type="text" name="lname" placeholder="Enter last name"><br>
+        Gender:<input type="radio" name="gender" value="male" id="">Male  <input type="radio" name="gender" id="" value="female">Female <br>
+        Language : <input type="checkbox" name="Telegu" value="Telegu" class="lang1" id="">Telegu
+          <input type="checkbox" name="English" value="English" class="lang1" id="">English  
+          <input type="checkbox" name="Hindi" value="Hindi" class="lang1" id="">Hindi <br>
+        Address :<textarea name="address" id=""></textarea> <br>
+        State:<select name="state" id="">
+            <option value="Select one">select one</option>
+            <option value="Chattogram">Chattogram</option>
+            <option value="Dhaka">Dhaka</option>
+        </select> <br>
+        Zip: <input type="text" name="zipcode" placeholder="Enter zipcode"><br>      
+        Credit Card Type:<select name="cct" id="">
+            <option value="Select one">Select One</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Credit Card">Credit Card</option>
+        </select> <br>
+        <button onclick="bill()" type="button" >Submit</button>
+    </fieldset>
+    </form>
+    <script>
+      function bill(){
+        let fname1 = document.form.fname.value;
+        let lname2 = document.form.lname.value;
+           let gender= document.form.gender.value;
+          let  lang=document.getElementsByClassName("lang1");
+          let langs="";
+          for(i=0;i<lang.length;i++){
+            if (lang[i].checked){
+                langs+=lang[i].value+","
+            }
+          }
+          let  cddress=document.form.address.value;
+          let  sta=document.form.state.value;
+          let  zip=document.form.zipcode.value;
+          let  card=document.form.cct.value;
+            let myw = window.open("", "student info", "height=500,width=800")
+        let output;
+        output = "<h1> Billing information</h1>"
+        output+= "First Name    :" + fname1 +"<br>"
+        output+= "Last Name  :" + lname2 +"<br>"
+        output+= "Gender:" + gender +"<br>"
+        output+= "Language:" + langs +"<br>"
+        output+= "Address:" + cddress +"<br>"
+        output+= "State:" + sta +"<br>"
+        output+= "ZipCode:" + zip +"<br>"
+        output+= "Card:" + card +"<br>"
+        
+        myw.document.write(output);
+
+
+    }
+    </script>
+
+</body>
+</html>

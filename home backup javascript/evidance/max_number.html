@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max number</title>
+</head>
+<body>
+ <div id="maxi"></div>
+    <script>
+        function fun(){
+        let numbers =[3,7,2,8,5]
+        let max =numbers [0]; // initialize first value
+            
+        for(let i= 1;i< numbers.length; i++){
+        if (numbers[i]> max){
+        max = numbers[i];                
+            }
+        }
+       document.getElementById("maxi").innerHTML=max +  "  is the biggest number" // document.write(max);
+    } // output : 8
+    </script>
+    <button onclick="fun()">click</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            background-color: aquamarine;
+            height: 100px;
+            width: 100px;
+            padding: 20px;
+        }
+        .pass{
+            background-color: green;
+        }
+        .fail{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        function pass_fail(){
+            let mcq =prompt("enter mcq number","")
+            let dc =prompt("enter dc number","")
+            let ev =prompt("enter ev number","")
+            if(mcq>=80 && dc>=80 && ev>= 80 ){
+                document.getElementById("result").innerHTML="<div class='pass'>pass</div>"
+            }else{
+            document.getElementById("result").innerHTML="<div class='fail'>fail</div>"
+        }
+        }
+    </script>
+    <button onclick="pass_fail()"> check result</button>
+</body>
+</html>

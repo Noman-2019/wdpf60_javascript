@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form">
+    Date: <input type="date" name="Date" id="">
+    <button onclick="mydate()" type="button">check</button>
+</form>
+    <script>
+        function mydate(){
+            let dat=document.form.Date.value;
+            const days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+           let d=new Date(dat)
+            alert(days[d.getDay()]);
+
+        }
+    </script>
+</body>
+</html>

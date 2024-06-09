@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="mform">
+    <h1>Billing Information</h1>
+    <input type="text" name="fname" id="" placeholder="first name"><br>
+    <input type="text" name="lname" id="" placeholder="last name"><br>
+    <input type="checkbox" name="hindi" id="" value="Hindi" class="course1">Hindi
+    <input type="checkbox" name="telegu" id="" value="Telegu" class="course1">Telegu
+    <input type="checkbox" name="hindi" id="" value="English" class="course1">English
+    <input type="radio" name="Gender" id=""  value="male">Male
+    <input type="radio" name="Gender" id=""  value="female">Female <br>
+    <input type="email" name="email" id="" placeholder="email"> <br>
+    <textarea name="address" id=""></textarea> <br>
+    <select name="state" id="">
+        <option value="choose one">Choose one</option>
+        <option value="Chattogram">Chattogram</option>
+        <option value="Dhaka">Dhaka</option>
+    </select> <br>
+<input type="text" name="zip" id="" placeholder="zipcode">
+<select name="cct" id="">
+    <option value="choose one">Choose one</option>
+    <option value="debit">debit</option>
+    <option value="credit">credit</option>
+</select> <br>
+<button onclick="bill()" value="submit">Submit</button>
+</form>
+<script>
+    function bill(){
+        let a =document.mform.fname.value;
+        let s =document.mform.lname.value;
+         let l =document.getElementsByClassName("course1")
+         let m="";
+         for(i=0;i<l.length;i++){
+            if(l[i].checked){
+                m+=l[i].value + ", "
+            }
+
+         }
+        
+        let d =document.mform.Gender.value;    
+        let f =document.mform.email.value;
+        let g =document.mform.address.value;
+        let h =document.mform.state.value;
+        let j =document.mform.zip.value;
+        let k =document.mform.cct.value;
+        mw=window.open("","Billing Information","width=800,height=600")
+
+        let output;
+        output="</h1>Billing Information</h1>"
+        output+= "First Name :" + a + "<br>"
+        output+= "Last Name : " + s + "<br>"
+        output+= "Course :"+ m + "<br>"
+        output+= "Gender :" + d + "<br>"
+        output+= "Email" + f + "<br>"
+        output+= "Address  :" + g + "<br>"
+        output+= " state :" + h + "<br>"
+        output+= " zipcode" + j + "<br>"
+        output+= " credit card : " + k + "<br>"
+         mw.document.write(output);
+
+    }
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="mform">
+    <input type="text" name="name" id="" placeholder="name"> <br>
+    <input type="text" name="contact" id="" placeholder="contact"> <br>
+    <textarea name="remarks" id="" placeholder="remarks"></textarea> <br>
+    <input type="radio" name="gender" id="" value="male">male 
+    <input type="radio" name="gender" id="" value="female">female <br>
+    <input type="checkbox" name="NT" id="" value="NT" class="course">NT 
+    <input type="checkbox" name="IAD" id=""value="IAD" class="course">IAD 
+    <input type="checkbox" name="DDD" id="" value="DDD" class="course">DDD 
+    <input type="checkbox" name="ESAD" id="" value="ESAD" class="course">ESAD <br>
+    <select name="location" id="">
+        <option value="Choose one">Choose one</option>
+        <option value="Banani">Banani</option>
+        <option value="Dhanmondi">Dhanmondi</option>
+        <option value="Mirpur">Mirpur</option>
+    </select>
+    <button onclick="trainee()"> check form</button>
+</form>
+<script>
+    function trainee(){
+    let a =document.mform.name.value;
+    let s =document.mform.contact.value;
+    let d =document.mform.remarks.value;
+    let f =document.mform.gender.value;
+    let g =document.getElementsByClassName("course")
+    let z=""
+    for(i=0;i<g.length;i++){
+        if(g[i].checked){
+            z+=g[i].value + ", "
+        }
+    }
+    let h =document.mform.location.value;
+    
+    let out ;
+    output="<h1> trainee data</h1>"
+    output+= "Name "+ a + "<br>"
+    output+= "contact "+ s + "<br>"
+    output+= "remarks "+ d + "<br>"
+    output+= "gender "+ f + "<br>"
+    output+= "course "+ z + "<br>"
+    output+= "location "+ h + "<br>"
+    
+    mw=window.open("","trainee data","width=800,height=600")
+    mw.document.write(output);
+}
+</script>
+
+</body>
+</html>

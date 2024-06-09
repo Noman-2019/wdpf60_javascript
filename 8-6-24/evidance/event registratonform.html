@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event resigtration</title>
+</head>
+<body>
+    <div id="show"></div>
+    <form action="thankyou.html" name="mform" style="width: fit-content;" onsubmit="return validation()">
+        <fieldset>
+        First Name:<input type="text" name="fname" id="" placeholder="first name"> <br>
+        Last Name:<input type="text" name="lname" id="" placeholder="last name"> <br>
+        Address:<textarea name="company" id="" placeholder="address"></textarea > <br>
+        Email:<input type="email" name="email" id="" placeholder="enter email"> <br>
+        Phone: <input type="tel" name="tel" id="" placeholder="number"> <br>
+        Subject:<select name="subject" id="">
+            <option value="choose one">choose one</option>
+            <option value="PHP">PHP</option>
+            <option value="python">python</option>
+            <option value="C++">C++</option>
+        </select> <br>
+        <label for="">Are you an existing customer?</label>
+        <input type="radio" name="customer" id="" value="Yes"> Yes <input type="radio" name="customer" id="" value="No"> No <br>
+        <button value="submit">submit</button>
+    </fieldset> 
+    </form>
+    <script>
+         function validation (){
+            let fn = document.mform.fname.value;
+            let ln = document.mform.lname.value;
+            let n = document.mform.tel.value;
+            let e = document.mform.email.value;
+            let com = document.mform.company.value;
+            let sub = document.mform.subject.value;
+            let cs = document.mform.customer.value;
+
+            const errors=[];
+            
+             if(fn==""){
+                errors[errors.length]="First name can't be empty";
+             }
+             if(ln==""){
+                errors[errors.length]="last name can't be empty";
+             }
+              if(n==""){
+                errors[errors.length]="Number can't be empty";
+             } if(e==""){
+                errors[errors.length]="Email can't be empty";
+             }
+             pattern=/[(A-z0-9)]+@[A-z]+\.[a-z]/
+             result=e.search(pattern)
+             if(result==-1){
+               errors[errors.length]="email not valid"
+             }
+            if(com==""){
+                errors[errors.length]="Company name can't be empty";
+             }
+             if(sub==""){
+                errors[errors.length]="please enter subject";
+             }
+             if(cs==""){
+                errors[errors.length]="please enter customer transaction status";
+             }
+             if(errors.length>0){
+               let  erroroutput="<ul>"
+                for(i=0;i<errors.length;i++){
+                    erroroutput+="<li>"+ errors[i] + "</li>"
+                }
+                erroroutput+="</ul>"
+            
+
+            document.getElementById("show").innerHTML=erroroutput;
+            return false;
+         }else{
+            document.getElementById("show").innerHTML="";
+            return true;
+         }
+        }
+    </script>
+</body>
+</html>

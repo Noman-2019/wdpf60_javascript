@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="mform">
+        <fieldset style="width: fit-content;">
+        <input type="text" name="name" id="" placeholder="name"> <br>
+        <input type="email" name="email" id="" placeholder="email"> <br>
+        <input type="email" name="con_email" id="" placeholder="confirm email"> <br>
+        <input type="password" name="password" id="" placeholder="enter password">
+        <button onclick="Valid()" type="button">click</button>
+    </fieldset>
+    </form>
+    
+    <script>
+        function Valid(){
+            let nam= document.mform.name.value;
+        let email1 = document.mform.email.value;
+        let email2 = document.mform.con_email.value;
+        let pass= document.mform.password.value;
+        let pattern =/[(A-z0-9)]+@[A-z]+\.[a-z]/
+        let result=email1.search(pattern);
+            if(nam==""){
+                alert("name must be entered")
+            }
+       else if(result==-1){
+            alert("invalid email")
+        }
+        else if(email1!=email2){
+            alert("email not matched")
+        }else if(pass.length<7){
+            alert("password must be entered")
+        }
+           
+        else{
+            alert("email is valid")
+        }
+    }
+
+    </script>
+</body>
+</html>

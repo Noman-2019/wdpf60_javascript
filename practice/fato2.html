@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="factorial"> </div>
+    <script>
+        function fact(){
+            let num=prompt("enter a number","")
+            fact=1
+            for(i=num;i>1;i--){
+                fact*=i
+            }
+            
+            //  alert()
+             document.getElementById("factorial").innerHTML= fact +" is the factorial of number "+ num       
+        }
+        
+    </script>
+    <button onclick="fact()">click here</button>
+</body>
+</html>

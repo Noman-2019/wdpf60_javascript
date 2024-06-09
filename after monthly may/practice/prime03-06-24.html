@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="mform" onsubmit="alert(primecheck())">
+        <input type="number" name="number" id="">
+    <input type="submit" name="submit" value="Submit">
+    </form>
+    <script>
+        function primecheck(){
+             x = document.mform.number.value;
+            if (x==0){
+                return  " blank or 0 is not allowed";
+            } else if (x==1){
+                return x + " is not a Prime number";
+            } else if (x==2){
+                return x + " is a prime number";
+            }else{for(i=2;i<x;i++){
+                if(x%i==0){
+                 return x + " is not Prime number";
+                }
+                
+            }
+            return x + " is a prime number";
+        }
+       
+        }
+        // document.write(primecheck())
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        table,tr.th,td{
+            border-collapse: collapse;
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let fruits=["orange","watermelon","banana","grape","pears"]
+
+
+
+        
+        let output="<table>"
+            output+="<tr><th> Serial No </th> <th> fruits </th> </tr>"
+            
+
+        
+        
+                
+        for(i=0;i<fruits.length;i++){
+                     sn=i+1;
+                     output+="<tr><td>" + sn  +"</td>"+"<td>" + fruits[i]  + "</td> </tr>"
+
+        }
+        output+="</table>"
+
+           
+                document.write(output)
+
+    </script>
+</body>
+</html>

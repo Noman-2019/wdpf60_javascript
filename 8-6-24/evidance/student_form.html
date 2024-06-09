@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form">
+    <label for="">Student Id    :</label>
+<input type="text" name="q" placeholder="Enter Your ID"><br> <br> 
+<label for="">Name    :</label>
+<input type="text" name="co" id="" placeholder="Enter Your Name"><br> <br> 
+<label for="">Course Name   :</label>
+<input type="text" name="se" id="" placeholder="Type Your Course"><br> <br>
+<label for="">Year    :</label>
+<input type="text" name="my" id="" placeholder="Year of Course"><br> <br> 
+<button onclick="fo()">Click</button>
+</form>
+
+<script>
+    function fo(){
+        let stu  = document.form.q.value;
+        let cor = document.form.co.value;
+        let so = document.form.se.value;
+        let lo = document.form.my.value;
+        if(stu==""){
+            alert ("Student ID must be entered")
+        }
+        else if(cor==""){
+            alert ("name must be entered")}
+            else if(so==""){
+            alert (" Course must be entered")}
+            else if(lo==""){
+            alert (" year must  be entered")
+        }else{
+        let myw = window.open("", "student info", "height=500,width=800")
+        let output;
+        output = "<h1> student information</h1>"
+        output+= "ID :" + stu +"<br>"
+        output+= "Name :" + cor +"<br>"
+        output+= "Course:" + so +"<br>"
+        output+= "Year :" + lo +"<br>"
+        
+        myw.document.write(output);
+    }
+       
+    }
+</script>
+</body>
+</html>
+</body>
+</html>

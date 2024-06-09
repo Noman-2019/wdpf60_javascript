@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="formo">
+        <fieldset style="width: fit-content;">
+            <input type="text" name="email" id="" placeholder="enter email" > <br>
+            <input type="email" name="conemail" id="" placeholder="confirm email"> <br>
+            <input type="password" name="password" id="" placeholder="password"> <br>
+            <button onclick="fun()" value="submit">login</button>
+
+        </fieldset>
+    </form>
+    <script>
+         fun = () => {
+        let e= document.formo.email.value;
+        let ce= document.formo.conemail.value;
+        let p= document.formo.password.value;
+        
+        let pattern=/[(A-z0-9)]+@[A-z]+\.[a-z]/
+        let result=e.search(pattern);
+        if(e==""){
+            alert("enter email")
+        }
+       else if(result==-1){
+           alert("email is not valid") ;
+        }else if(e!=ce){
+           alert("email not matched") ;
+        }else if(p.length<7){
+            alert("password not valid");
+        }else{ 
+            alert("OK");
+        }
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="form">
+        <fieldset>
+    email: <input type="text" name="email" id=""> <br>
+    confirm email: <input type="text" name="con_email" id=""> <br>
+    password: <input type="password" name="password" id=""> <br>
+    <button onclick="fo()" type="button" value="submit">submit</button>
+</fieldset>
+</form>
+    <script>
+        function fo(){
+            let em1=document.form.email.value;
+            let em2=document.form.con_email.value;
+            let password=document.form.password.value;
+            let pattern=/[(a-z0-9)+@[A-z]+\.[a-z]/
+            let result =em1.search(pattern);
+            if(result==-1){
+               alert("not valid") 
+            }
+            else if( em1!=em2){
+               alert("email not matched") 
+            }
+            else if(password.length<7){
+                alert("not valid")
+            }else{
+                alert("valid")
+            }
+        }
+    </script>
+</body>
+</html>
