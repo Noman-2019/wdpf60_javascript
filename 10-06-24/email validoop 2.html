@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="validation2.js"></script>
+</head>
+<body>
+    <script>
+        function fun(){
+        let x=prompt("enter your email","");
+        // let email=myemail;
+        // let pattern=/[A-z0-9]+@[A-z]+\.[a-z]/
+        // let result=x.search(pattern);
+        
+            let obj=new valida(x);
+            obj.validate();
+            
+        
+        
+    }
+    </script>
+    <button onclick="fun()">click</button>
+</body>
+</html>

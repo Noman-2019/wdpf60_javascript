@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="show"></div>
+    <form action="" name="mform">
+        <fieldset>
+        <input type="text" name="email" id="" placeholder="enter email"> <br>
+        <input type="password" name="pass" id="" placeholder="enter password"> <br>
+        <button type="button"  onclick="lvali()">Login</button>
+    </fieldset>
+    </form>
+    <script>
+        class pa {
+            constructor (emaail,passw){
+                this.eemail=emaail;
+                this.pass=passw;
+            }
+            
+            logvali(){
+                var pattern=/[A-z0-9]+@[a-z]+\.[a-z]/
+                
+                if(this.eemail==""){
+                    alert("please enter email")
+                }
+                else if(this.pass==""){
+                    alert("please enter password")
+                }else if(this.pass<7){
+                    
+                    alert("password is too short")
+                }else if(this.eemail.search(pattern)==-1){
+                    alert("email not valid")
+                }
+                else{
+                    document.getElementById("show").innerHTML= "form is ok";
+                }
+                }
+
+            }
+
+        
+        function lvali(){
+           let em=document.mform.email.value;
+           let  pass=document.mform.pass.value;
+             
+            let ob=new pa(em,pass);
+            ob.logvali();
+        }
+    </script>
+</body>
+</html>

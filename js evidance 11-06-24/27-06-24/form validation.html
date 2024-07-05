@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="coform" style="width: fit-content;">
+        <fieldset>
+          Name:  <input type="text" name="name" id="" placeholder="enter name"> <br>
+            Contact :<input type="text" name="contact" id="" placeholder="enter contact"> <br>
+            Remarks:<textarea name="remarks" id="" placeholder="enter remarks"></textarea> <br>
+            Sex:<input type="radio" name="gender" id="" value="male">Male <input type="radio" name="gender" id="" value="female">Female <br>
+            Courses :<input type="checkbox" name="NT" class="course1" value="NT">NT 
+            <input type="checkbox"  class="course1" value="IAD">IAD 
+            <input type="checkbox"  class="course1" value="DDD">DDD 
+            <input type="checkbox"  class="course1" value="ESAD">ESAD  <br>
+          Location:  <select name="location" id="">
+            <option value="Choose one">Choose one</option>
+                <option value="Banani">Banani</option>
+                <option value="Dhanmondi">Dhanmondi</option>
+                <option value="Mirpur">Mirpur</option>
+            </select> <br>
+            <button  value="submit" onclick="myfu()">Submit</button> 
+        </form>
+        </fieldset>
+        <script>
+            class fv{
+            constructor (name,contact,remarks,sex,cours,location){
+                    this.name=name;
+                    this.contact=contact;
+                    this.remarks=remarks;
+                    this.sex=sex;
+                    this.courses=cours;
+                    this.location=location;
+
+                }
+                ovf(){
+                    let win=window.open("","form vaildation","width=500,height=800")
+                     let output;
+                    output="<h1>form Data<h1>";
+                    output+="Name :"+ this.name + "<br>";
+                    output+="Contact:"+ this.contact + "<br>";
+                    output+="Remarks :"+ this.remarks +"<br>";
+                    output+="Sex : "+ this.sex + "<br>";
+                    output+="Courses :"+this.courses + "<br>";
+                    output+="Location :"+ this.location + "<br>";
+                    win.document.write(output);
+                }
+            }
+            function myfu(){
+              let nam=document.coform.name.value;
+              let conta=document.coform.contact.value;
+              let rem=document.coform.remarks.value;
+              let se=document.coform.gender.value;
+              let cor=document.getElementsByClassName("course1");
+              let course="";
+              for(i=0;i<cor.length;i++){
+                if(cor[i].checked){
+                    course+=cor[i].value+","
+                }
+              }
+              
+              let loc =document.coform.location.value;
+
+              let obj= new fv(nam,conta,rem,se,course,loc);
+              obj.ovf();
+            }
+        </script>
+    
+</body>
+</html>

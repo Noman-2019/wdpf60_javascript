@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="" name="mform">
+        <input type="text" name="email" placeholder="enter email"> <br>
+    <button type="button" onclick="cem()" value="check" >Check</button>
+</form> -->
+<button type="button" onclick="cem()" value="check" >Check</button>
+    <script>
+        class emailvali{
+            constructor(email){
+                this.mail=email;
+            }
+           emailvaliDate(){
+            
+              let pattern =/[A-z0-9]+@[a-z]+\.[a-z]{2,4}/ 
+              if(this.mail.search(pattern)==-1){
+                return false;
+              }
+              else{
+                return true;
+              }
+
+            }
+        }
+        function cem(){
+            let email=prompt("enter your email")
+            obj=new emailvali(email);
+            if(obj.emailvaliDate()){
+                document.getElementById("show").innerHTML="Email address is correct";
+            }else{
+                document.getElementById("show").innerHTML="Email Address is wrong";
+            };
+            
+
+
+
+        }
+        
+    
+
+    </script>
+    <div id="show"></div>
+</body>
+</html>

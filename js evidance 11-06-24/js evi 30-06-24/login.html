@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>answer to the question no 2</h1>
+    <form action="" name="myform" style="width: fit-content;">
+        <fieldset>
+            <legend>login form</legend>
+            <input type="text" name="name" placeholder="enter name"><br>
+            <input type="password" name="passw" > <br>
+            <button type="button" onclick="me()">submit</button>
+        </fieldset>
+    </form>
+    <div id="show"></div>
+    <script>
+        class myclass{
+            constructor(tex,pass){
+                this.text=tex;
+                this.password=pass;
+            }
+            mymethod(){
+                if(this.text.length<6){
+                    document.getElementById("show").innerHTML="username must be 6 character"
+                }else if(this.password.length<8){
+                    document.getElementById("show").innerHTML="password must be 8 character"
+                }else{
+                    document.getElementById("show").innerHTML="Ok"
+                }
+            }
+
+        }
+        function me(){
+            let xavi=document.myform.name.value;
+            let pique=document.myform.passw.value;
+            oja=new myclass(xavi,pique);
+            oja.mymethod();
+        }
+    </script>
+</body>
+</html>

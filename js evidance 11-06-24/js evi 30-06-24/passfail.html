@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> to the question no 1</h1>
+    <form action="" name="htmlform">
+        <fieldset>
+            <legend>marks check</legend>
+            <input type="number" name="mcq" placeholder="mcq marks"> <br>
+            <input type="number" name="dscr" placeholder="dscr marks"> <br>
+            <input type="number" name="evi" placeholder="evi marks"> <br>
+            <button type="button" onclick="passf()">check</button>
+        </fieldset>
+    </form>
+    <div id="show"></div>
+    <script>
+        function passf(){
+            let mcq=document.htmlform.mcq.value;
+            let Decr=document.htmlform.dscr.value;
+            let evi=document.htmlform.evi.value;
+
+            if(mcq>=80 && Decr>=60 && evi>=60){
+                document.getElementById("show").innerHTML="<b class=passed>you have passed</b>"
+            }else{
+                document.getElementById("show").innerHTML="<b class=failed>you have Failed</b>"
+            }
+        }
+    </script>
+</body>
+</html>

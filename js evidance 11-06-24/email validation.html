@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="validation.js"></script>
+</head>
+<body>
+    <form action="" name="formm">
+    Email:<input type="email" name="email" id="" placeholder="enter email"> <br>
+    password:<input type="password" name="passoword" id="" placeholder="enter password"> <br>
+    <button onclick="cv()" value="login">login</button>
+     
+</form>
+    <script>
+        function cv(){
+        let emil=document.formm.email.value
+        let passw=document.formm.passoword.value;
+        if(emil==""){
+            alert("please enter email address");
+        }
+        else if(passw==""){
+            alert("please enter password");
+         }else{
+            // let ob=
+            let mobj=new m(emil,passw);
+            // let mobj2=new m(passw);
+            // let mo=mobj,mobj2;
+            
+            mobj.checkvalue();
+            // mobj2.checkvalue();
+            document.write(mobj.checkvalue())
+
+         }
+        }
+    </script>
+
+</body>
+</html>

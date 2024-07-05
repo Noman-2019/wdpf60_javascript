@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="sf" style="width: fit-content;">
+        <fieldset>
+        Name:<input type="text" name="sn" id="" placeholder="enter your name"> <br>
+        Contact :<input type="text" name="scon" id="" placeholder="enter your contact"> <br>
+       address: <textarea name="addres" id=""></textarea> <br>
+        Gender  :<input type="radio" name="gender" id="" value="Male">Male <input type="radio" name="gender" id="" value="Female">female <br>
+        Courses : <input type="checkbox" name="NT" id="" class="Course1" value="NT">NT
+        <input type="checkbox" name="IAD" id="" class="Course1" value="IAD"> IAD
+        <input type="checkbox" name="WDPF" id="" class="Course1" value="WDPF"> WDPF
+        <input type="checkbox" name="JAVA" id="" class="Course1" value="JAVA">JAVA <br>
+        <select name="location" id="">
+            <option value="Choose one">Choose one</option>
+            <option value="Dhaka">Dhaka</option>
+            <option value="Chattogram">Chattogram</option>
+            <option value="Cumilla">Cumllia</option> 
+
+        </select> <br>
+        <button type="button" onclick="myf()">Submit</button>
+    </fieldset>
+    </form>
+    <script>
+        class im{
+            constructor (name,contact,address,gender,course,location){
+                this.nam=name;
+                this.con=contact;
+                this.add=address;
+                this.gend=gender;
+                this.co=course;
+                this.loc=location;
+            }
+            stud(){
+                if(this.nam==""){
+                    alert("please enter email")
+                }
+                else if(this.con==""){
+                    alert("please enter contact")
+                }
+                else if(this.add==""){
+                    alert("please enter address")
+                }
+                else if(this.gend==""){
+                    alert("please enter gender")
+                }else if(this.co==""){
+                    alert("please enter course")
+                }else if(this.loc==""){
+                    alert("please enter location")
+                }
+                else{
+                    alert("ok")
+                }
+                let mw=window.open("","student data","width=600,height=800")
+                let output;
+                output+="<h1> student data<h1>"
+                output+="Name : " + this.nam + "<br>"
+                output+="Contact : " + this.con + "<br>"
+                output+="Address : " + this.add + "<br>"
+                output+="Gender : " + this.gend + "<br>"
+                output+="Courses : " + this.co + "<br>"
+                output+="Location : " + this.loc + "<br>"
+                
+                mw.document.write(output);
+            }
+        }
+        function myf(){
+            let name=document.sf.sn.value;
+            let contact=document.sf.scon.value;
+            let address=document.sf.addres.value;
+            let gen=document.sf.gender.value;
+            let cor=document.getElementsByClassName("Course1")
+            let course="";
+            for(p=0;p<cor.length;p++){
+                if(cor[p].checked){
+                    course+=cor[p].value +",";
+                }
+            }
+            let loca=document.sf.location.value;
+
+            let obj=new im(name,contact,address,gen,course,loca);
+            obj.stud();
+
+        }
+
+    </script>
+</body>
+</html>

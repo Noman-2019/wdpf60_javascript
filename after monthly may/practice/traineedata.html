@@ -6,23 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" name="mform">
-    <input type="text" name="name" id="" placeholder="name"> <br>
-    <input type="text" name="contact" id="" placeholder="contact"> <br>
-    <textarea name="remarks" id="" placeholder="remarks"></textarea> <br>
-    <input type="radio" name="gender" id="" value="male">male 
+    <form action="" name="mform" style="width: fit-content;">
+    <fieldset>
+   Name: <input type="text" name="name" id="" placeholder="name"> <br>
+    Address:<input type="text" name="contact" id="" placeholder="contact"> <br>
+    Remark:<textarea name="remarks" id="" placeholder="remarks"></textarea> <br>
+   Gender : <input type="radio" name="gender" id="" value="male">male 
     <input type="radio" name="gender" id="" value="female">female <br>
-    <input type="checkbox" name="NT" id="" value="NT" class="course">NT 
+   Courses  : <input type="checkbox" name="NT" id="" value="NT" class="course">NT 
     <input type="checkbox" name="IAD" id=""value="IAD" class="course">IAD 
     <input type="checkbox" name="DDD" id="" value="DDD" class="course">DDD 
     <input type="checkbox" name="ESAD" id="" value="ESAD" class="course">ESAD <br>
-    <select name="location" id="">
+   Location: <select name="location" id="">
         <option value="Choose one">Choose one</option>
         <option value="Banani">Banani</option>
         <option value="Dhanmondi">Dhanmondi</option>
         <option value="Mirpur">Mirpur</option>
-    </select>
+    </select> <br>
     <button onclick="trainee()"> check form</button>
+</fieldset>
 </form>
 <script>
     function trainee(){
@@ -39,7 +41,7 @@
     }
     let h =document.mform.location.value;
     
-    let out ;
+    let output ;
     output="<h1> trainee data</h1>"
     output+= "Name "+ a + "<br>"
     output+= "contact "+ s + "<br>"
@@ -52,6 +54,5 @@
     mw.document.write(output);
 }
 </script>
-
 </body>
 </html>
